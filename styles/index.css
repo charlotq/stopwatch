@@ -1,0 +1,56 @@
+@import url("normalize.css");
+@import url("roboto.css");
+
+body {
+    height: 100vh;
+    display: flex;
+}
+
+.main {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.main__p {
+    margin: auto;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 120px;
+    line-height: 124px;
+    text-align: center;
+}
+
+.main__buttons {
+    display: flex;
+    flex-direction: row;
+    width: 800px;
+}
+
+.main__button:disabled {
+    color:#fff;
+    background: #000;
+}
+
+.main__button {
+    font-family: 'Roboto', Arial, serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 50px;
+    text-align: center;
+    background: #fff;
+    border: 7px solid #000;
+    border-radius: 7px;
+    margin: 50px auto 0;
+    width: 250px;
+    height: 65px;
+    outline: none;
+}
+
+.main__button:hover {
+    cursor: pointer;
+    background: #000;
+    color: #fff;
+}
