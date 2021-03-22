@@ -1,9 +1,20 @@
 @import url("normalize.css");
 @import url("roboto.css");
 
+:root[theme='light'] {
+    --secondary-color: #000;
+    --main-color: #fff;
+}
+
+:root[theme='dark'] {
+    --secondary-color: #fff;
+    --main-color: #212121;
+}
+
 body {
     height: 100vh;
     display: flex;
+    background: var(--main-color);
 }
 
 .main {
@@ -12,11 +23,30 @@ body {
     flex-direction: column;
 }
 
+.main__theme {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    background-image: url('../moon_black.png');
+    border: none;
+    height: 32px;
+    width: 32px;
+    background-size: 100%;
+    outline: none;
+}
+
+.main__theme:hover {
+   cursor: pointer;
+}
+
+
 .main__p {
+    color: var(--secondary-color);
     margin: auto;
     font-family: 'Roboto', Arial, sans-serif;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 120px;
     line-height: 124px;
     text-align: center;
@@ -29,28 +59,29 @@ body {
 }
 
 .main__button:disabled {
-    color:#fff;
-    background: #000;
+    color: var(--main-color);
+    background: var(--secondary-color);
 }
 
 .main__button {
+    color: var(--secondary-color);
     font-family: 'Roboto', Arial, serif;
     font-style: normal;
-    font-weight: 500;
-    font-size: 50px;
-    line-height: 50px;
+    font-weight: 400;
+    font-size: 38px;
+    line-height: 38px;
     text-align: center;
-    background: #fff;
-    border: 7px solid #000;
+    background: var(--main-color);
+    border: 4px solid var(--secondary-color);
     border-radius: 7px;
     margin: 50px auto 0;
-    width: 250px;
-    height: 65px;
+    width: 200px;
+    height: 50px;
     outline: none;
 }
 
 .main__button:hover {
     cursor: pointer;
-    background: #000;
-    color: #fff;
+    background: var(--secondary-color);
+    color: var(--main-color);
 }
