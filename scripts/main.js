@@ -1,9 +1,10 @@
 const timer = document.querySelector('.main__p');
 const startButton = document.querySelector('#start');
+const pauseButton = document.querySelector('#pause');
+const resetButton = document.querySelector('#reset');
 const themeButton = document.querySelector('.main__theme');
 let milliseconds = 0;
 let timerActivity;
-document.documentElement.setAttribute('theme', 'light');
 
 function startTimer() {
     timerActivity = setInterval(() => {
@@ -40,8 +41,14 @@ themeButton.addEventListener('click', (e) => {
     }
 });
 
-document.addEventListener('click', (e) => {
-    if (e.target.id === 'start') startTimer();
-    if (e.target.id === 'pause') pauseTimer();
-    if (e.target.id === 'reset') resetTimer();
-});
+startButton.addEventListener('click', startTimer);
+pauseButton.addEventListener('click', pauseTimer);
+resetButton.addEventListener('click', resetTimer);
+
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.documentElement.setAttribute('theme', 'dark');
+    themeButton.style.backgroundImage = "url('moon_white.png')";
+} else {
+    document.documentElement.setAttribute('theme', 'light');
+    themeButton.style.backgroundImage = "url('moon_black.png')";
+}

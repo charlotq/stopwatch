@@ -68,8 +68,8 @@ body {
     font-family: 'Roboto', Arial, serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 38px;
-    line-height: 38px;
+    font-size: 35px;
+    line-height: 35px;
     text-align: center;
     background: var(--main-color);
     border: 4px solid var(--secondary-color);
